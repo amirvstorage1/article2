@@ -1,0 +1,628 @@
+{
+  "version": "5.7",
+  "mode": "article_framework",
+  "description": "نسخهٔ کامل و نهایی: تمام ورودی‌ها (inputs)، قوانین ساختاری/فهرست، سئو/AEO، واژه‌نامه (شماره‌گذاری بر اساس اولین وقوع در متن)، برچسب‌ها، تصاویر، وب‌گردی و سازندهٔ HTML/ZIP.",
+  "capabilities_required": {
+    "web_browsing": true,
+    "advanced_data_analysis_or_code_interpreter": true,
+    "image_generation_inside_chat": true,
+    "file_download_links": true
+  },
+  "inputs": {
+    "topic_keyword": "اوتیسم",
+    "lang": "fa",
+    "audience": "مخاطب عمومیِ آگاه",
+    "tone": "ژورنالی، شفاف، علمی-ساده، محترمانه",
+    "article_length_words": {
+      "target": 1200,
+      "min": 900,
+      "max": 1500
+    },
+    "images_count": 3,
+    "image_sizes": {
+      "hero": "1792x1024",
+      "inline": "1024x768"
+    },
+    "domain": "https://alefbayearamesh.com",
+    "base_path": "/blog",
+    "structure_defaults": {
+      "min_sections": 5,
+      "min_paragraphs_per_section": 2,
+      "min_toc_items": 6
+    },
+    "citation_style_default": "numeric",
+    "glossary_annotate_mode": "all",
+    "auto_glossary_english": true,
+    "auto_glossary_english_min_len": 2,
+    "auto_glossary_english_limit": 500,
+    "deprecated_intext_apa": true,
+    "meta": {
+      "glossary": {
+        "allow_web": true,
+        "sources": [
+          "who",
+          "nimh",
+          "apa"
+        ],
+        "cache_days": 90
+      },
+      "toc_numbering": {
+        "max_level": 3
+      }
+    }
+  },
+  "research": {
+    "recency_window_days": 365,
+    "min_sources": 5,
+    "query_templates": [
+      "{topic_keyword} latest trend 2025 site:.gov OR site:.edu OR site:.org",
+      "{topic_keyword} new study 2024..2025",
+      "site:who.int {topic_keyword} 2024..2025",
+      "site:lancet.com OR site:nejm.org {topic_keyword}"
+    ],
+    "source_priority_policy": [
+      "T1) مرورهای نظام‌مند/متاآنالیزهای داوری‌شده (Cochrane, Lancet, NEJM, JAMA, BMJ, Nature Medicine, ...).",
+      "T2) رهنمودها/بیانیه‌های رسمی (WHO, CDC, NICE/USPSTF/NIH, وزارت بهداشت).",
+      "T3) داده‌های پایشی دولتی/بین‌المللی (CDC ADDM, WHO dashboards, UN/UNICEF/OECD).",
+      "T4) RCT/کوهورت با کیفیت بالا (در صورت نبود T1/T2 برای گزاره).",
+      "T5) مرورهای غیرداوری/سایت‌های تخصصی معتبر (تنها برای زمینه‌سازی).",
+      "T6) رسانه‌های عمومی/وبلاگ‌ها (فقط نقل ثانویه و با لینک به منبع نخستین)."
+    ],
+    "sourcing_rules": [
+      "هر ادعای عددی/زمانی حتماً به منبع T1–T3 وصل شود.",
+      "هر منبع دارای تاریخ و ناشر روشن باشد؛ لینک مستقیم به صفحهٔ اصلی.",
+      "در تعارض منابع، جدیدترین مرور نظام‌مند مقدم است، سپس رهنمود رسمی."
+    ]
+  },
+  "title_engine": {
+    "must": [
+      "شفافیت، دقت و جذابیت بدون اغراق",
+      "بهتر است عدد/زاویه مشخص/ارزش پیشنهادی داشته باشد",
+      "≤ 80 کاراکتر"
+    ],
+    "avoid": [
+      "لو دادن کامل محتوا",
+      "تیتر بسیار طولانی",
+      "ادعاهای بی‌پشتوانه"
+    ],
+    "templates": [
+      "راهنمای سریع {موضوع}: از {الف} تا {ب}",
+      "{X نکتهٔ کلیدی} که {گروه مخاطب} باید بداند",
+      "آیا {باور رایج} واقعاً درست است؟"
+    ]
+  },
+  "opening_engine": {
+    "structure": "OpenLead: Hook → Bridge → Why Now → Outcome",
+    "tips": [
+      "وقت مخاطب را تلف نکن؛ عصاره را بگو",
+      "هماهنگی کامل با تیتر و بدنه؛ اغراق نکن",
+      "جملات کوتاه؛ لحن منطبق با بازار هدف",
+      "می‌توان پاراگراف اول را در پایان نوشت"
+    ]
+  },
+  "body_engine": {
+    "structure": [
+      "هم‌راستا با تیتر و پاراگراف اول؛ شفاف و پله‌پله",
+      "پاراگراف‌های کوتاه؛ واژه‌های کلیدی **بولد**",
+      "زنجیرهٔ استدلالی واضح (A → B)؛ پرهیز از بدیهی‌پنداری",
+      "ارائهٔ شواهد و لینک‌های معتبر (پی‌نوشت)",
+      "در صورت امکان آمار/نمودار از منابع معتبر"
+    ],
+    "readability": [
+      "جملات کوتاه؛ اصطلاحات تعریف شوند",
+      "لحن مطابق مخاطب؛ از اطناب پرهیز"
+    ],
+    "big_picture_check": [
+      "آیا مقاله متفاوت و ارزش‌افزا است؟",
+      "آیا به پرسش اصلی پاسخ داده‌ایم؟"
+    ]
+  },
+  "image_engine": {
+    "hero_rules": [
+      "کاملاً مرتبط با زاویهٔ مقاله؛ باکیفیت و سبک یکنواخت",
+      "حجم بهینه؛ نسبت صحیح؛ حس حرفه‌ای",
+      "alt دقیق و محترمانه"
+    ],
+    "inline_rules": [
+      "همهٔ نکات عکس اصلی را دارند + ارزش‌افزوده (نمودار/دیاگرام/مثال تصویری)",
+      "از نسبت‌های اشتباه/رزولوشن فیک پرهیز شود"
+    ],
+    "filenames": [
+      "hero.jpg",
+      "inline-1.jpg",
+      "inline-2.jpg"
+    ]
+  },
+  "conclusion_engine": {
+    "rules": [
+      "نکتهٔ جدید اضافه نشود",
+      "جمع‌بندی مختصر و منسجم",
+      "پُل طبیعی به CTA"
+    ]
+  },
+  "cta_engine": {
+    "rules": [
+      "صادقانه بگو از مخاطب چه می‌خواهی",
+      "دو فراخوان کوتاه (اشتراک‌گذاری/نظر/اقدام عملی ساده)"
+    ]
+  },
+  "related_engine": {
+    "count": {
+      "min": 3,
+      "max": 5
+    },
+    "format": "title + slug"
+  },
+  "structure_rules": {
+    "min_sections": 5,
+    "max_sections": 8,
+    "min_paragraphs_per_section": 2,
+    "max_paragraphs_per_section": 6,
+    "require_subsections": true,
+    "min_subsections_in_first_sections": 1
+  },
+  "toc_rules": {
+    "min_items": 6,
+    "include_h3": true
+  },
+  "glossary_guidelines": {
+    "what_to_include": [
+      "مخفف‌ها/سرواژه‌ها",
+      "اصطلاحات تخصصی/نوی",
+      "مفاهیم پرهیاهو"
+    ],
+    "how_to_write": [
+      "تعریف ۱–۲ جمله بی‌جانبدار",
+      "ثبت citation_ids مرتبط",
+      "ثبت aliases برای معادل‌ها",
+      "در حالت v5.7 تمام رخدادهای هر اصطلاح با سوپراسکریپت شماره‌دار علامت‌گذاری می‌شوند و شماره‌ها بر اساس «اولین وقوع در متن» اختصاص می‌یابند.",
+      "واژه‌های انگلیسی (حروف لاتین) به‌صورت خودکار شناسایی و به واژه‌نامه افزوده و شماره‌گذاری می‌شوند."
+    ],
+    "placement": "before_references"
+  },
+  "quality_checks": {
+    "validators": [
+      "min_sections: >=5",
+      "min_paragraphs_per_section: >=2",
+      "toc_items: >=6 (H2/H3)",
+      "seo.meta_description ≤ 160 کاراکتر",
+      "citations ≥5 دارای تاریخ",
+      "۳ تصویر یا placeholder ساخته شده",
+      "واژه‌نامه در صورت وجود اصطلاحات تخصصی پر شده باشد",
+      "inline_citation_style: فقط numeric؛ APA درون‌متنی مجاز نیست (در صورت مشاهده => WARNING)",
+      "references_clickable: تمام آیتم‌های منابع باید لینک فعال داشته باشند (DOI/URL)",
+      "toc_render: بدون هرگونه باقیماندهٔ رشته‌های کمکی",
+      "glossary_annotate_mode: باید 'all' باشد (همه رخدادها)",
+      "autoglossary_english: فعال؛ تمام واژه‌های لاتین در متن باید شماره‌گذاری و وارد واژه‌نامه شوند",
+      "glossary_coverage_rate: ≥95% از واژه‌های لاتین کشف‌شده باید در glossary نهایی حضور داشته باشد",
+      "ref_punctuation: حذف علائم اضافی دوتایی مانند '.' در منابع"
+    ],
+    "scoring": {
+      "clarity": 0,
+      "evidence": 0,
+      "readability": 0,
+      "originality": 0
+    }
+  },
+  "workflow": [
+    "1) ترند اسکاوتینگ (≤۱۲ ماه): ۳ زاویه داغ برای topic_keyword پیدا کن.",
+    "2) انتخاب زاویه: یکی را با استدلال کوتاه انتخاب کن.",
+    "3) طرح مقاله: outline با ۵–۶ سکشن H2 و در دو سکشن اول حداقل یک H3.",
+    "4) گردآوری منابع: ≥۵ منبع معتبر با عنوان/آدرس/تاریخ.",
+    "5) نگارش: OpenLead + بدنه ساخت‌یافته؛ ارجاع داخل متن [۱]…",
+    "6) واژه‌نامه: اصطلاحات تخصصی را استخراج و glossary را پر کن.",
+    "7) سئو و AEO: فیلدهای seo و ai_seo را کامل کن.",
+    "8) تصاویر: prompt دقیق برای hero/inline؛ فایل‌ها hero.jpg, inline-1.jpg, inline-2.jpg.",
+    "9) خروجی JSON: دقیقاً مطابق output_schema.",
+    "10) فایل‌سازی: python_builder را اجرا؛ HTML + ZIP بساز (حتی با Warningها).",
+    "11) پاسخ نهایی: فقط لینک ZIP.",
+    "5c) اگر meta.citation_style='apa' باشد، در v5.7 نادیده بگیر و numeric را اعمال کن؛ WARNING بده.",
+    "6c) Auto-Glossary: تمام توکن‌های انگلیسی متن را (حداکثر به‌تعداد limit) به واژه‌نامهٔ پویا بیفزا و در متن شماره‌گذاری کن.",
+    "7c) Glossary annotation: همهٔ رخدادها را با <sup class='gloss-sup'> شماره‌دار کن (RTL-safe) و برای لینک aria-label بده.",
+    "8c) TOC: رندر داخلی زیرسرفصل‌ها را با join درست بساز (بدون رشتهٔ اضافی).",
+    "9c) منابع: به‌صورت <ol> شماره‌دار + لینک‌دار (عنوان داخل <a href>). برای DOI با الگوی 10.* لینک https://doi.org/<DOI> ساخته شود."
+  ],
+  "output_schema": {
+    "meta": {
+      "topic_keyword": "",
+      "detected_trend_angle": "",
+      "justification": "",
+      "lang": "fa",
+      "audience": "",
+      "tone": "",
+      "slug": "",
+      "byline_date_iso": "",
+      "domain": "",
+      "base_path": "/blog",
+      "author": {
+        "name": "",
+        "bio": "",
+        "url": ""
+      },
+      "glossary": {
+        "allow_web": true,
+        "sources": [
+          "who",
+          "nimh",
+          "apa"
+        ],
+        "cache_days": 90
+      },
+      "reviewer": {
+        "name": "",
+        "credentials": "",
+        "url": ""
+      },
+      "citation_style": "numeric",
+      "glossary_annotate_mode": "all",
+      "auto_glossary_english": true,
+      "auto_glossary_english_min_len": 2,
+      "auto_glossary_english_limit": 500
+    },
+    "title": {
+      "final": "",
+      "candidates": []
+    },
+    "opening_paragraph": {
+      "hook": "",
+      "bridge": "",
+      "why_now": "",
+      "outcome": "",
+      "text": ""
+    },
+    "outline": [
+      {
+        "h2": "",
+        "summary": ""
+      }
+    ],
+    "sections": [
+      {
+        "heading": "",
+        "paragraphs": [
+          ""
+        ],
+        "bullets": [],
+        "subsections": [
+          {
+            "heading": "",
+            "paragraphs": [
+              ""
+            ],
+            "bullets": []
+          }
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "id": 1,
+        "title": "",
+        "url": "",
+        "publisher": "",
+        "date": "",
+        "note": "",
+        "doi": ""
+      }
+    ],
+    "images": {
+      "hero_prompt": "",
+      "internal_prompts": [
+        "",
+        ""
+      ],
+      "generated": [
+        {
+          "role": "hero",
+          "filename": "hero.jpg",
+          "alt": ""
+        },
+        {
+          "role": "inline",
+          "filename": "inline-1.jpg",
+          "alt": ""
+        },
+        {
+          "role": "inline",
+          "filename": "inline-2.jpg",
+          "alt": ""
+        }
+      ],
+      "sizes": {
+        "hero": "1792x1024",
+        "inline": "1024x768"
+      }
+    },
+    "seo": {
+      "meta_title": "",
+      "meta_description": "",
+      "canonical_url": "",
+      "robots": "index,follow",
+      "keywords": [],
+      "og": {
+        "og_title": "",
+        "og_description": "",
+        "og_image": "hero.jpg"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "",
+        "description": "",
+        "image": "hero.jpg"
+      },
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "",
+          "datePublished": "",
+          "dateModified": "",
+          "author": {
+            "@type": "Person",
+            "name": ""
+          },
+          "reviewedBy": {
+            "@type": "Person",
+            "name": ""
+          },
+          "image": [
+            "hero.jpg"
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Example",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "/logo.png"
+            }
+          },
+          "mainEntityOfPage": ""
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "وبلاگ",
+              "item": "/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "",
+              "item": ""
+            }
+          ]
+        }
+      ],
+      "sitemap_entry": {
+        "changefreq": "weekly",
+        "priority": 0.8
+      }
+    },
+    "ai_seo": {
+      "answer_snippet": "",
+      "tldr": "",
+      "key_points": [
+        ""
+      ],
+      "qa_pairs": [
+        {
+          "q": "",
+          "a": ""
+        }
+      ],
+      "speakable": [
+        ""
+      ],
+      "entity_links": [
+        {
+          "name": "",
+          "url": ""
+        }
+      ],
+      "semantic_variants": [
+        ""
+      ],
+      "internal_links": [
+        {
+          "anchor": "",
+          "href": ""
+        }
+      ],
+      "tags": [
+        ""
+      ]
+    },
+    "glossary_meta": {
+      "placement": "before_references"
+    },
+    "glossary": [
+      {
+        "id": 1,
+        "term": "",
+        "aliases": [
+          ""
+        ],
+        "definition": "",
+        "citation_ids": []
+      }
+    ],
+    "conclusion": "",
+    "cta": [
+      "",
+      ""
+    ],
+    "related": [
+      {
+        "title": "",
+        "slug": ""
+      }
+    ],
+    "tags": [
+      {
+        "name": "",
+        "slug": ""
+      }
+    ]
+  },
+  "instructions_text": "از topic_keyword فقط به‌عنوان «کلمهٔ خام» استفاده کن؛ با وب‌گردی تازه زاویهٔ ترند را کشف و انتخاب کن، ساختار حداقلی (≥۵ سکشن، هر سکشن ≥۲ پاراگراف، TOC ≥۶ آیتم شامل H3) را رعایت کن، واژه‌نامه/برچسب‌ها را پر کن، سئو و AEO را کامل کن، سه تصویر را بساز/جایگزین کن، و سپس python_builder را اجرا کن تا HTML + ZIP آماده شود. پاسخ نهایی فقط لینک ZIP باشد. برچسب‌ها ۶–۱۰ مورد باشد و از هدرها/کلیدواژه‌ها استخراج شود. اگر نتوانستی کد را اجرا کنی، `fail_safe_python_cell` را در یک سلول پایتون بچسبان، مقدار ARTICLE_JSON را با خروجی کامل مقاله پر کن، اجرا کن و فقط لینک ZIP را برگردان.",
+  "zip_output_name": "article_package.zip",
+  "python_builder": "import base64\nimport json\nimport html\nimport zipfile\nimport re\nimport argparse\nimport os\nfrom pathlib import Path\n\ntry:\n    from PIL import Image, ImageDraw\nexcept Exception:  # Pillow may be unavailable in some sandboxes\n    Image = None\n    ImageDraw = None\n\nROOT = Path('.').resolve()\nOUT_HTML = ROOT / 'article.html'\nOUT_JSON = ROOT / 'article.json'\nREFS_JSON = ROOT / 'references.json'\nGLOSS_JSON = ROOT / 'glossary.json'\nZIP_NAME = 'article_package.zip'\nHERO_FN, INL1_FN, INL2_FN = 'hero.jpg', 'inline-1.jpg', 'inline-2.jpg'\n\nSTRIP_CHARS = \".,;:()[]{}\\\"'\"\nFALLBACK_JPEG_B64 = (\n    \"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhIVFRUVFRUVFRUVFRUVFRUWFxUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAAIEBQYBB//EADcQAAICAQIEAwYEBgMAAAAAAAABAgMRBBIhMQUTQVFhBhQiMnGBkRRCUrHB0fAVM2Jy4fEkQ1ODkqKy/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAKBEAAgICAgICAQUBAAAAAAAAAAECEQMhEjFBEyJRYXEU8CMjM0KBsf/aAAwDAQACEQMRAD8A8/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==\"\n)\n\n# ---------- utils ----------\ndef esc(s):\n    return html.escape(s or '')\n\n\ndef size_tuple(s, default=(1280, 720)):\n    try:\n        w, h = [int(x) for x in str(s).lower().split('x')]\n        return (w, h)\n    except Exception:\n        return default\n\n\ndef ensure_img(path, size=(1280, 720), label='PLACEHOLDER'):\n    p = Path(path)\n    if p.exists():\n        return\n    w, h = size\n    if Image and ImageDraw:\n        im = Image.new('RGB', (w, h), (238, 241, 245))\n        d = ImageDraw.Draw(im)\n        d.text((20, h // 2 - 8), f'{label} {w}x{h}', fill=(90, 90, 90))\n        im.save(p, 'JPEG', quality=86, optimize=True)\n        return\n    data = base64.b64decode(FALLBACK_JPEG_B64)\n    p.write_bytes(data)\n\n\ndef hard_wrap(txt):\n    # very simple markdown bold to <strong>\n    return re.sub(r'\\*\\*(.+?)\\*\\*', r'<strong>\\1</strong>', esc(txt or ''))\n\n\ndef slugify(s):\n    t = (s or '').strip().lower()\n    t = re.sub(r'\\s+', '-', t)\n    t = re.sub(r'[^\\w\\-\\u0600-\\u06FF]', '', t)\n    return t or 'tag'\n\n\n# ---------- load or bootstrap article JSON ----------\ndef _bootstrap_article(topic: str = \"مقاله نمونه\", lang: str = \"fa\"):\n    # Minimal, but *complete* scaffold so output is never empty and warnings are minimized\n    secs = []\n    for i in range(1, 6):\n        secs.append({\n            \"heading\": f\"بخش {i}\",\n            \"paragraphs\": [\n                f\"این پاراگراف اول بخش {i} است و برای تست بیلدر استفاده می‌شود.\",\n                f\"این پاراگراف دوم بخش {i} است تا حداقل‌های ساختار رعایت شود.\"\n            ]\n        })\n    cites = []\n    for j in range(1, 6):\n        cites.append({\n            \"id\": j,\n            \"title\": f\"مرجع {j} برای {topic}\",\n            \"publisher\": \"SamplePub\",\n            \"date\": \"2024-01-0{}\".format(j),\n            \"url\": f\"https://example.com/{j}\"\n        })\n    return {\n        \"meta\": {\n            \"lang\": lang,\n            \"byline_date_iso\": \"2024-01-01\",\n            \"toc_numbering\": {\n                \"max_level\": 3,\n                \"root_suffix\": \"-\",\n                \"segment_suffix\": \"-\",\n                \"convert_digits\": True\n            },\n            \"glossary\": {\n                \"allow_web\": True,\n                \"allow_llm\": True,\n                \"cache_ttl_days\": 90,\n                \"max_sentences\": 2\n            },\n            \"base_path\": \"/blog\",\n            \"domain\": \"\"\n        },\n        \"title\": {\"final\": topic},\n        \"opening_paragraph\": {\"text\": \"این یک پاراگراف آغازین نمونه است.\"},\n        \"sections\": secs,\n        \"conclusion\": \"این یک جمع‌بندی نمونه است.\",\n        \"cta\": [\"عضویت در خبرنامه\", \"مطالعه مطالب مرتبط\"],\n        \"citations\": cites,\n        \"images\": {\n            \"sizes\": {\"hero\": \"1792x1024\", \"inline\": \"1024x768\"},\n            \"generated\": [\n                {\"role\": \"hero\", \"alt\": \"تصویر قهرمان مقاله\"},\n                {\"role\": \"inline\", \"alt\": \"تصویر درون‌متن یک\"},\n                {\"role\": \"inline\", \"alt\": \"تصویر درون‌متن دو\"}\n            ]\n        },\n        \"ai_seo\": {\n            \"internal_links\": [\n                {\"anchor\": \"لینک داخلی ۱\", \"href\": \"/blog/a\"},\n                {\"anchor\": \"لینک داخلی ۲\", \"href\": \"/blog/b\"},\n                {\"anchor\": \"لینک داخلی ۳\", \"href\": \"/blog/c\"}\n            ],\n            \"qa_pairs\": [{\"q\": \"سوال نمونه؟\", \"a\": \"پاسخ نمونه.\"}],\n            \"speakable\": [\"h1\", \"#references\"]\n        },\n        \"tags\": [\"تست\", \"نمونه\", \"بیلدر\"],\n        \"structure_rules\": {\"min_sections\": 5, \"min_paragraphs_per_section\": 2},\n        \"glossary\": [{\"term\": \"WHO\"}, {\"term\": \"ADOS\"}, {\"term\": \"ADI-R\"}]\n    }\n\n\ntopic_env = os.environ.get(\"ARTICLE_TOPIC\", \"مقاله نمونه\")\ntry:\n    if OUT_JSON.exists():\n        raw = OUT_JSON.read_text(encoding=\"utf-8\").strip()\n        if not raw:\n            article = _bootstrap_article(topic_env)\n            OUT_JSON.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n        else:\n            try:\n                article = json.loads(raw)\n            except Exception:\n                article = _bootstrap_article(topic_env)\n                OUT_JSON.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n    else:\n        article = _bootstrap_article(topic_env)\n        OUT_JSON.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding=\"utf-8\")\nexcept Exception:\n    article = _bootstrap_article(topic_env)\n    OUT_JSON.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n\nlang = (article.get('meta', {}) or {}).get('lang', 'fa')\ndir_attr = 'rtl' if str(lang).startswith('fa') else 'ltr'\nsizes = (article.get('images', {}) or {}).get('sizes', {})\nseo = article.get('seo', {}) or {}\nai_seo = article.get('ai_seo', {}) or {}\nstructure_rules = article.get('structure_rules', {}) or {}\n\nmeta = article.get('meta', {}) or {}\ncitation_style_req = (meta.get('citation_style') or article.get('citation_style') or 'numeric').strip().lower()\ncitation_style = 'numeric'  # force numeric (stable)\nwarnings = []\nif citation_style_req != 'numeric':\n    warnings.append(f'INLINE_CITATION_STYLE_FORCED_NUMERIC: requested={citation_style_req}')\n\nhero_sz = size_tuple(sizes.get('hero', '1792x1024'), (1792, 1024))\ninl_sz = size_tuple(sizes.get('inline', '1024x768'), (1024, 768))\nensure_img(HERO_FN, hero_sz, 'HERO')\nensure_img(INL1_FN, inl_sz, 'INLINE-1')\nensure_img(INL2_FN, inl_sz, 'INLINE-2')\n\ntitle = (article.get('title', {}) or {}).get('final') or ((article.get('title', {}) or {}).get('candidates') or [''])[0]\nop = article.get('opening_paragraph', {}) or {}\nsections = article.get('sections', []) or []\nconclusion = article.get('conclusion', '') or ''\ncta = article.get('cta', []) or []\ncites = article.get('citations', []) or []\nbase_path = article.get('meta', {}).get('base_path', '/blog')\ndomain = article.get('meta', {}).get('domain', '')\n\nhero_alt = inl1_alt = inl2_alt = ''\nfor m in (article.get('images', {}) or {}).get('generated', []) or []:\n    role = (m or {}).get('role')\n    if role == 'hero' and not hero_alt:\n        hero_alt = (m or {}).get('alt', '')\n    elif role == 'inline':\n        if not inl1_alt:\n            inl1_alt = (m or {}).get('alt', '')\n        elif not inl2_alt:\n            inl2_alt = (m or {}).get('alt', '')\n\nnorm = lambda s: (s or '').strip()\n\n# --- ENSURE: meta.glossary.allow_web (and friends) are set before _gl_cfg is read ---\narticle.setdefault('meta', {}).setdefault('glossary', {})\narticle['meta']['glossary'].setdefault('allow_web', True)\narticle['meta']['glossary'].setdefault('allow_llm', True)\narticle['meta']['glossary'].setdefault('cache_ttl_days', 90)\narticle['meta']['glossary'].setdefault('max_sentences', 2)\n\ntry:\n    OUT_JSON.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding='utf-8')\nexcept Exception as _e:\n    warnings.append(f\"ARTICLE_JSON_PERSIST_FAILED: {_e}\")\n\n_gl_cfg = (article.get('meta', {}) or {}).get('glossary', {}) if isinstance(article.get('meta', {}), dict) else {}\n\n\ndef _gl_get(k, default=None):\n    return (_gl_cfg or {}).get(k, default)\n\n\nCACHE_DIR = ROOT / \"cache\"\nCACHE_DIR.mkdir(exist_ok=True)\nGLOSS_CACHE = CACHE_DIR / \"glossary_cache.json\"\n\n\ndef _now_iso():\n    from datetime import datetime, timezone\n    return datetime.now(timezone.utc).isoformat()\n\n\ndef content_hash(s: str) -> str:\n    import hashlib\n    return hashlib.sha256((s or \"\").encode(\"utf-8\")).hexdigest()\n\n\ndef cache_load():\n    try:\n        return json.loads(GLOSS_CACHE.read_text(encoding=\"utf-8\"))\n    except Exception:\n        return {}\n\n\ndef cache_save(d):\n    tmp = GLOSS_CACHE.with_suffix(\".tmp\")\n    tmp.write_text(json.dumps(d, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n    tmp.replace(GLOSS_CACHE)\n\n\ndef cache_get(canonical_key: str, ttl_days: int = 90):\n    data = cache_load()\n    rec = data.get(canonical_key)\n    if not rec:\n        return None\n    try:\n        from datetime import datetime, timezone, timedelta\n        ts = rec.get(\"timestamp\")\n        if ts:\n            dt = datetime.fromisoformat(ts.replace(\"Z\", \"+00:00\"))\n            if datetime.now(timezone.utc) - dt > timedelta(days=ttl_days):\n                return None\n    except Exception:\n        pass\n    return rec\n\n\ndef cache_put(canonical_key: str, record: dict):\n    data = cache_load()\n    data[canonical_key] = record\n    cache_save(data)\n\n\ndef term_key(s: str) -> str:\n    t = (s or \"\").strip()\n    t = re.sub(r'[\\u2010-\\u2015\\u2212\\u2043]+', '-', t)\n    if re.search(r'[A-Za-z]', t):\n        t = re.sub(r'[\\s\\-]+', '', t).upper()\n    else:\n        t = re.sub(r'[\\u200c\\u200f\\u200e]', '', t)\n    return t\n\n\ndef _requests_session():\n    try:\n        import requests\n        s = requests.Session()\n        s.headers.update({\"User-Agent\": \"GlossBuilder/1.0\"})\n        return s\n    except Exception:\n        return None\n\n\ndef fetch_apa(term: str, session=None, cfg=None):\n    if not _gl_get(\"allow_web\", False):\n        return None\n    session = session or _requests_session()\n    if not session:\n        return None\n    try:\n        slug = re.sub(r'[^A-Za-z0-9\\-]+', '-', term.strip()).strip('-').lower()\n        url = f\"https://dictionary.apa.org/{slug}\"\n        r = session.get(url, timeout=5)\n        if r.status_code != 200:\n            return None\n        m = re.search(r'<meta name=\"description\" content=\"([^\"]+)\"', r.text, re.I)\n        if m:\n            txt = html.unescape(m.group(1)).strip()\n        else:\n            m2 = re.search(r'<div class=\"definition\">([\\s\\S]*?)</div>', r.text, re.I)\n            txt = re.sub(r'<[^>]+>', ' ', m2.group(1)).strip() if m2 else \"\"\n        if not txt:\n            return None\n        return {\"text\": txt, \"url\": url, \"source\": \"apa\", \"confidence\": 0.9, \"reviewed\": True}\n    except Exception:\n        return None\n\n\ndef fetch_nimh(term: str, session=None, cfg=None):\n    if not _gl_get(\"allow_web\", False):\n        return None\n    session = session or _requests_session()\n    if not session:\n        return None\n    try:\n        slug = re.sub(r'[^A-Za-z0-9\\-]+', '-', term.strip()).strip('-').lower()\n        for url in [\n            f\"https://www.nimh.nih.gov/health/topics/{slug}\",\n            f\"https://www.nimh.nih.gov/health/publications/{slug}\"\n        ]:\n            r = session.get(url, timeout=5)\n            if r.status_code == 200 and \"NIMH\" in r.text:\n                m = re.search(r'<main[^>]*>([\\s\\S]+?)</main>', r.text, re.I)\n                body = m.group(1) if m else r.text\n                p = re.search(r'<p>([\\s\\S]*?)</p>', body, re.I)\n                txt = re.sub(r'<[^>]+>', ' ', p.group(1)).strip() if p else \"\"\n                if txt:\n                    return {\n                        \"text\": txt,\n                        \"url\": url,\n                        \"source\": \"nimh\",\n                        \"confidence\": 0.85,\n                        \"reviewed\": True\n                    }\n        return None\n    except Exception:\n        return None\n\n\ndef fetch_who(term: str, session=None, cfg=None):\n    if not _gl_get(\"allow_web\", False):\n        return None\n    session = session or _requests_session()\n    if not session:\n        return None\n    try:\n        slug = re.sub(r'[^A-Za-z0-9\\-]+', '-', term.strip()).strip('-').lower()\n        url = f\"https://www.who.int/health-topics/{slug}\"\n        r = session.get(url, timeout=5)\n        if r.status_code == 200 and \"WHO\" in r.text:\n            m = re.search(r'<div[^>]+class=\"sf-detail-body\"[^>]*>([\\s\\S]+?)</div>', r.text, re.I)\n            body = m.group(1) if m else r.text\n            p = re.search(r'<p>([\\s\\S]*?)</p>', body, re.I)\n            txt = re.sub(r'<[^>]+>', ' ', p.group(1)).strip() if p else \"\"\n            if txt:\n                return {\n                    \"text\": txt,\n                    \"url\": url,\n                    \"source\": \"who\",\n                    \"confidence\": 0.8,\n                    \"reviewed\": True\n                }\n        return None\n    except Exception:\n        return None\n\n\ndef validate_definition_quality(text: str) -> bool:\n    if not text:\n        return False\n    if len(text) > 400:\n        return False\n    bad = [\"دوز\", \"مصرف دارو\", \"نسخه\", \"تشخیص قطعی\", \"اورژانسی\", \"تجویز\"]\n    if any(b in text for b in bad):\n        return False\n    return True\n\n\ndef summarize_and_validate(text: str, max_sentences: int = 2) -> str:\n    sents = re.split(r'(?<=[\\.\\!\\؟\\!])\\s+', (text or \"\").strip())\n    sents = [s.strip() for s in sents if s.strip()]\n    if not sents:\n        return \"\"\n    out = \" \".join(sents[:max_sentences])\n    out = re.sub(r'\\s+', ' ', out).strip()\n    return out[:400]\n\n\ndef llm_definition(term: str):\n    if not _gl_get(\"allow_llm\", False):\n        return None\n    base = f\"تعریف کوتاه برای «{term}» در دسترس نیست؛ این اصطلاح به مفهومی تخصصی در روان‌شناسی اشاره دارد.\"\n    return {\"text\": base, \"url\": None, \"source\": \"llm\", \"confidence\": 0.6, \"reviewed\": False}\n\n\ndef resolve_definition_for_entry(entry, pool_lookup_by_term):\n    display = entry.get(\"term\") or \"\"\n    ck = term_key(display)\n    existing = (entry.get(\"definition\") or \"\").strip()\n    if existing and existing not in (\"واژهٔ انگلیسی.\", \"واژه انگلیسی.\", \"نامشخص\"):\n        return {\n            \"text\": existing,\n            \"source\": \"internal\",\n            \"url\": None,\n            \"confidence\": 0.95,\n            \"reviewed\": True\n        }\n    rec = cache_get(ck, ttl_days=int(_gl_get(\"cache_ttl_days\", 90)))\n    if rec and rec.get(\"definition\", {}).get(\"fa\"):\n        entry.update({\n            \"definition\": rec[\"definition\"][\"fa\"],\n            \"source\": rec.get(\"source\"),\n            \"provenance_url\": rec.get(\"provenance_url\"),\n            \"confidence\": rec.get(\"confidence\", 0.8),\n            \"reviewed\": rec.get(\"reviewed\", True),\n        })\n        return {\n            \"text\": entry[\"definition\"],\n            \"source\": entry.get(\"source\"),\n            \"url\": entry.get(\"provenance_url\"),\n            \"confidence\": entry.get(\"confidence\", 0.8),\n            \"reviewed\": entry.get(\"reviewed\", True)\n        }\n    session = _requests_session()\n    for fetcher in (fetch_apa, fetch_nimh, fetch_who):\n        res = fetcher(display, session=session, cfg=_gl_cfg)\n        if res and validate_definition_quality(res.get(\"text\", \"\")):\n            txt = summarize_and_validate(res[\"text\"], max_sentences=int(_gl_get(\"max_sentences\", 2) or 2))\n            entry.update({\n                \"definition\": txt,\n                \"source\": res[\"source\"],\n                \"provenance_url\": res.get(\"url\"),\n                \"confidence\": res.get(\"confidence\", 0.8),\n                \"reviewed\": res.get(\"reviewed\", True),\n            })\n            cache_put(ck, {\n                \"term\": display,\n                \"canonical_key\": ck,\n                \"number\": entry.get(\"id\"),\n                \"display\": display,\n                \"definition\": {\"fa\": txt},\n                \"source\": entry[\"source\"],\n                \"provenance_url\": entry.get(\"provenance_url\"),\n                \"confidence\": entry.get(\"confidence\", 0.8),\n                \"reviewed\": entry.get(\"reviewed\", True),\n                \"timestamp\": _now_iso(),\n                \"hash\": content_hash(txt + (entry.get(\"source\") or \"\")),\n            })\n            return {\n                \"text\": txt,\n                \"source\": entry[\"source\"],\n                \"url\": entry.get(\"provenance_url\"),\n                \"confidence\": entry.get(\"confidence\", 0.8),\n                \"reviewed\": entry.get(\"reviewed\", True)\n            }\n    res = llm_definition(display)\n    if res and res.get(\"text\"):\n        txt = summarize_and_validate(res[\"text\"], max_sentences=int(_gl_get(\"max_sentences\", 2) or 2))\n        entry.update({\n            \"definition\": txt,\n            \"source\": res[\"source\"],\n            \"provenance_url\": None,\n            \"confidence\": res.get(\"confidence\", 0.6),\n            \"reviewed\": False,\n        })\n        cache_put(ck, {\n            \"term\": display,\n            \"canonical_key\": ck,\n            \"number\": entry.get(\"id\"),\n            \"display\": display,\n            \"definition\": {\"fa\": txt},\n            \"source\": entry[\"source\"],\n            \"provenance_url\": None,\n            \"confidence\": entry.get(\"confidence\", 0.6),\n            \"reviewed\": False,\n            \"timestamp\": _now_iso(),\n            \"hash\": content_hash(txt + (entry.get(\"source\") or \"\")),\n        })\n        return {\n            \"text\": txt,\n            \"source\": \"llm\",\n            \"url\": None,\n            \"confidence\": 0.6,\n            \"reviewed\": False\n        }\n    entry.update({\n        \"definition\": \"نامشخص\",\n        \"source\": \"none\",\n        \"provenance_url\": None,\n        \"confidence\": 0.0,\n        \"reviewed\": False\n    })\n    return {\n        \"text\": \"نامشخص\",\n        \"source\": \"none\",\n        \"url\": None,\n        \"confidence\": 0.0,\n        \"reviewed\": False\n    }\n\n\ncmap = {int(c.get('id')): c for c in cites if str(c.get('id', '')).isdigit()}\n\nimport re as _re\n\n\ndef extract_english_tokens(text):\n    toks = _re.findall(r'(?<![\\w\\-])([A-Za-z][A-Za-z0-9+\\-\\/\\.]{1,})(?![\\w\\-])', text or '')\n    toks = [t.strip(STRIP_CHARS).strip() for t in toks if t.strip()]\n    return toks\n\n\ndef _fix_strip(lst):\n    fixed = []\n    for t in lst:\n        t2 = t.strip(STRIP_CHARS).strip()\n        if t2:\n            fixed.append(t2)\n    return fixed\n\n\neng_tokens = []\n\n\ndef _collect_from_str(s):\n    if not s:\n        return\n    tmp = extract_english_tokens(s)\n    tmp = _fix_strip(tmp)\n    seen = set()\n    for t in tmp:\n        k = t.lower()\n        if k not in seen:\n            seen.add(k)\n            eng_tokens.append(t)\n\n\n_collect_from_str(op.get('text', ''))\nfor sec in sections:\n    for p in (sec.get('paragraphs') or []):\n        _collect_from_str(p)\n    for b in (sec.get('bullets') or []):\n        _collect_from_str(b)\n    for sub in (sec.get('subsections') or []):\n        for p in (sub.get('paragraphs') or []):\n            _collect_from_str(p)\n        for b in (sub.get('bullets') or []):\n            _collect_from_str(b)\nfor gimg in (article.get('images', {}) or {}).get('generated', []) or []:\n    _collect_from_str(gimg.get('alt', ''))\n\nmin_len = int(meta.get('auto_glossary_english_min_len', 2))\nlimit = int(meta.get('auto_glossary_english_limit', 500))\neng_tokens = [t for t in eng_tokens if len(t) >= min_len][:limit]\n\n\ngloss_pool = []\npool_terms_lower = set()\nfor g in (article.get('glossary') or []):\n    term = norm(g.get('term'))\n    if not term:\n        continue\n    low = term.lower()\n    if low in pool_terms_lower:\n        continue\n    pool_terms_lower.add(low)\n    gloss_pool.append({\n        'term': term,\n        'aliases': [a for a in (g.get('aliases') or []) if a],\n        'definition': norm(g.get('definition') or g.get('short_def') or ''),\n        'citation_ids': g.get('citation_ids') or []\n    })\n\nck_to_index = {}\nfor idx, g in enumerate(gloss_pool):\n    ck_to_index.setdefault(term_key(g['term']), idx)\n\nfor tok in eng_tokens:\n    low = tok.lower()\n    ck = term_key(tok)\n    if ck in ck_to_index:\n        idx = ck_to_index[ck]\n        aliases = set(gloss_pool[idx].get('aliases') or [])\n        if low not in aliases:\n            aliases.add(low)\n            gloss_pool[idx]['aliases'] = list(aliases)\n        continue\n    gloss_pool.append({\n        'term': tok,\n        'aliases': [low, ck],\n        'definition': 'واژهٔ انگلیسی.',\n        'citation_ids': []\n    })\n    idx = len(gloss_pool) - 1\n    ck_to_index[ck] = idx\n    pool_terms_lower.add(low)\n\nvariant_map = {}\nfor idx, g in enumerate(gloss_pool):\n    variant_map[g['term'].lower()] = idx\n    for a in (g.get('aliases') or []):\n        if a:\n            variant_map[a.lower()] = idx\n\nassigned_ids = {}\nassigned_order = []\nnext_id = 1\n\nvariants_sorted = sorted(variant_map.items(), key=lambda kv: len(kv[0]), reverse=True)\n\n\ndef annotate_chunk(html_text):\n    global next_id\n    if not gloss_pool:\n        return html_text\n    text = html_text\n    var_specs = []\n    for var_lower, root_idx in variants_sorted:\n        pat = _re.compile(\n            r'(?<![>\\w\\u0600-\\u06FF])(' + _re.escape(var_lower) + r')(?![\\w\\u0600-\\u06FF])',\n            flags=_re.IGNORECASE\n        )\n        var_specs.append((pat, root_idx))\n\n    parts = _re.split(r'(<[^>]+>)', text)\n    out = []\n    in_anchor = False\n    for chunk in parts:\n        if not chunk:\n            continue\n        if chunk.startswith(\"<\"):\n            tag = chunk\n            if _re.match(r'<\\s*a\\b', tag, flags=_re.IGNORECASE):\n                in_anchor = True\n            elif _re.match(r'</\\s*a\\s*>', tag, flags=_re.IGNORECASE):\n                in_anchor = False\n            out.append(tag)\n            continue\n\n        if in_anchor:\n            out.append(chunk)\n            continue\n\n        def _make_repl(root_idx):\n            def repl(m):\n                global next_id\n                if root_idx not in assigned_ids:\n                    assigned_ids[root_idx] = next_id\n                    assigned_order.append((next_id, root_idx))\n                    next_id += 1\n                gid = assigned_ids[root_idx]\n                gid_fa = to_persian_digits(str(gid)) if 'to_persian_digits' in globals() else str(gid)\n                orig = m.group(1)\n                return (\n                    \"<span class='glossary-term'>\" + orig + \"</span>\"\n                    + \"<sup class='gloss-sup'>\"\n                    + \"<a href='#gloss-\" + str(gid) + \"' title='تعریف واژه' aria-label='واژه\\u200cنامه: \" + gid_fa + \"'>\"\n                    + gid_fa\n                    + \"</a>\"\n                    + \"</sup>\"\n                )\n            return repl\n\n        txt = chunk\n        for pat, root_idx in var_specs:\n            txt = pat.sub(_make_repl(root_idx), txt)\n        out.append(txt)\n\n    return \"\".join(out)\n\n\nmin_sec = int(structure_rules.get('min_sections', 5) or 5)\nif len(sections) < min_sec:\n    warnings.append(f'TOO_FEW_SECTIONS: have {len(sections)}, expected >= {min_sec}')\nmin_p = int(structure_rules.get('min_paragraphs_per_section', 2) or 2)\nfor idx, s in enumerate(sections, start=1):\n    ps = (s or {}).get('paragraphs', []) or []\n    if len(ps) < min_p:\n        warnings.append(f'SECTION_{idx}_FEW_PARAGRAPHS: have {len(ps)}, expected >= {min_p}')\n\nmin_sources = int((article.get('research') or {}).get('min_sources', 5) or 5)\ndated = [c for c in cites if (c or {}).get('date')]\nif len(cites) < min_sources:\n    warnings.append(f'CITATIONS_FEW: have {len(cites)}, expected >= {min_sources}')\nif len(dated) < len(cites):\n    warnings.append(\"CITATIONS_MISSING_DATE: some entries lack 'date'\")\n\n\ndef inject_link(text_html, link_obj):\n    if not link_obj:\n        return text_html\n    anchor = (link_obj or {}).get('anchor', '').strip()\n    href = (link_obj or {}).get('href', '').strip()\n    if not (anchor and href):\n        return text_html\n    pat = _re.compile(_re.escape(anchor), flags=_re.IGNORECASE)\n    if pat.search(text_html):\n        return pat.sub(f\"<a href='{esc(href)}'>\" + esc(anchor) + \"</a>\", text_html, count=1)\n    return text_html + \" — \" + f\"<a href='{esc(href)}'>\" + esc(anchor) + \"</a>\"\n\n\ninternal_links = (ai_seo.get('internal_links') or []) if isinstance(ai_seo, dict) else []\n\nop_text_html = hard_wrap(op.get('text', ''))\nif internal_links:\n    op_text_html = inject_link(op_text_html, internal_links[0])\nop_text_html = annotate_chunk(op_text_html)\n\nbody_parts = []\nlink_idx = 1\nfor idx, s in enumerate(sections):\n    anchor = f\"sec{idx + 1}\"\n    heading = esc((s or {}).get('heading', ''))\n    ps = (s or {}).get('paragraphs', []) or []\n    bl = (s or {}).get('bullets', []) or []\n    subs = (s or {}).get('subsections', []) or []\n\n    block = [f\"<section id='{anchor}'>\", f\"<h2>{heading}</h2>\"]\n    for p_i, p in enumerate(ps):\n        ph = hard_wrap(p)\n        if p_i == 0 and link_idx < len(internal_links) and idx in (0, 1):\n            ph = inject_link(ph, internal_links[link_idx])\n            link_idx += 1\n        block.append(f\"<p>{annotate_chunk(ph)}</p>\")\n\n    if bl:\n        items = []\n        for b in bl:\n            items.append('<li>' + annotate_chunk(hard_wrap(b)) + '</li>')\n        block.append('<ul>' + ''.join(items) + '</ul>')\n\n    if idx == 0:\n        block.append(\n            f\"<figure><img src='{INL1_FN}' alt='{esc(inl1_alt)}' loading='lazy' decoding='async' aria-describedby='cap-inline-1' \"\n            f\"width='{inl_sz[0]}' height='{inl_sz[1]}'><figcaption id='cap-inline-1'>{annotate_chunk(esc(inl1_alt))}</figcaption></figure>\"\n        )\n    if idx == 1:\n        block.append(\n            f\"<figure><img src='{INL2_FN}' alt='{esc(inl2_alt)}' loading='lazy' decoding='async' aria-describedby='cap-inline-2' \"\n            f\"width='{inl_sz[0]}' height='{inl_sz[1]}'><figcaption id='cap-inline-2'>{annotate_chunk(esc(inl2_alt))}</figcaption></figure>\"\n        )\n\n    for j, sub in enumerate(subs):\n        h3 = esc((sub or {}).get('heading', ''))\n        sps = (sub or {}).get('paragraphs', []) or []\n        sbl = (sub or {}).get('bullets') or []\n        block.append(f\"<section id='sec{idx + 1}-{j + 1}'>\")\n        block.append(f\"<h3>{h3}</h3>\")\n        for p in sps:\n            block.append(f\"<p>{annotate_chunk(hard_wrap(p))}</p>\")\n        if sbl:\n            items = []\n            for b in sbl:\n                items.append('<li>' + annotate_chunk(hard_wrap(b)) + '</li>')\n            block.append('<ul>' + ''.join(items) + '</ul>')\n        block.append('</section>')\n\n    block.append('</section>')\n    body_parts.append('\\n'.join(block))\n\n\ndef ref_li_numeric(c):\n    title = esc((c.get('title') or '').rstrip('. '))\n    pub = esc(c.get('publisher', '') or c.get('container', ''))\n    date = esc(c.get('date', ''))\n    doi = (c.get('doi', '') or '').strip()\n    url = (c.get('url', '') or '').strip()\n    href = (\n        f\"https://doi.org/{doi}\"\n        if doi and (doi.lower().startswith('10.') or not doi.lower().startswith('http'))\n        else (url or '')\n    )\n    if doi and doi.lower().startswith('10.'):\n        href = f\"https://doi.org/{doi}\"\n    anchor = (\n        f\"<a href='{esc(href)}' target='_blank' rel='nofollow noopener external'>{title}</a>\"\n        if href\n        else title\n    )\n    extra = f\" — {pub}\" if pub else \"\"\n    extra += f\" ({date})\" if date else \"\"\n    return f\"<li>{anchor}{extra}</li>\"\n\n\nrefs_html = ''\nif cites:\n    refs_html = '<ol>\\n' + '\\n'.join(ref_li_numeric(c) for c in cites) + '\\n</ol>'\n\n\nseen_root = set()\nassigned_ids = assigned_ids\nassigned_order = assigned_order\nnext_id = max([i for i, _ in assigned_order], default=0) + 1\nfor idx in range(len(gloss_pool)):\n    if idx not in assigned_ids:\n        assigned_ids[idx] = next_id\n        assigned_order.append((next_id, idx))\n        next_id += 1\n\nassigned_order.sort(key=lambda t: t[0])\n\n_pool_by_term_lower = {(g.get(\"term\", \"\").lower()): g for g in gloss_pool}\n\n\ndef _pool_lookup(term_lower: str):\n    return _pool_by_term_lower.get(term_lower)\n\n\nfinal_gloss = []\nfor gid, root_idx in assigned_order:\n    entry = {\n        'id': gid,\n        'term': gloss_pool[root_idx]['term'],\n        'aliases': gloss_pool[root_idx].get('aliases', []),\n        'definition': gloss_pool[root_idx].get('definition', ''),\n        'citation_ids': gloss_pool[root_idx].get('citation_ids', [])\n    }\n    try:\n        _res = resolve_definition_for_entry(entry, _pool_lookup)\n        entry['source'] = _res.get('source')\n        entry['provenance_url'] = _res.get('url')\n        entry['confidence'] = _res.get('confidence', 0.8)\n        entry['reviewed'] = _res.get('reviewed', True)\n    except Exception as e:\n        entry['source'] = 'error'\n        entry['provenance_url'] = None\n        entry['confidence'] = 0.0\n        entry['reviewed'] = False\n        warnings.append(f\"GLOSS_RESOLVE_ERROR[{entry['term']}]: {e}\")\n    final_gloss.append(entry)\n\n\ntags = article.get('tags', []) or []\ntags_html = ''\nif tags:\n    items = []\n    for t in tags:\n        if isinstance(t, dict):\n            name = esc(t.get('name', ''))\n            slug = esc(t.get('slug') or slugify(name))\n        else:\n            name = esc(str(t))\n            slug = slugify(name)\n        base = f\"{base_path}/tag/{slug}\"\n        href = f\"{domain.rstrip('/')}{base}\" if domain else base\n        items.append(f\"<li><a href='{href}'>#{name}</a></li>\")\n    tags_html = (\n        '<section class=\"tags\">\\n<h3>برچسب‌ها</h3>\\n<ul class=\"taglist\">'\n        + ''.join(items)\n        + '</ul>\\n</section>'\n    )\n\nmeta_title = esc(seo.get('meta_title') or title)\nmeta_desc = esc((seo.get('meta_description', '') or '')[:160])\ncanonical = esc(seo.get('canonical_url', ''))\nrobots = esc(seo.get('robots', 'index,follow'))\nog = seo.get('og', {}) or {}\ntw = seo.get('twitter', {}) or {}\njson_ld_list = seo.get('json_ld') or []\n\nqa = (ai_seo.get('qa_pairs') or []) if isinstance(ai_seo, dict) else []\nif qa:\n    faq_ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': []}\n    for pair in qa[:10]:\n        q = (pair or {}).get('q', '').strip()\n        a = (pair or {}).get('a', '').strip()\n        if q and a:\n            faq_ld['mainEntity'].append({\n                '@type': 'Question',\n                'name': q,\n                'acceptedAnswer': {'@type': 'Answer', 'text': a}\n            })\n    if faq_ld['mainEntity']:\n        json_ld_list.append(faq_ld)\n\nspeakable_sel = (ai_seo.get('speakable') or []) if isinstance(ai_seo, dict) else []\nif speakable_sel:\n    json_ld_list.append({\n        '@context': 'https://schema.org',\n        '@type': 'Article',\n        'speakable': {'@type': 'SpeakableSpecification', 'cssSelector': speakable_sel}\n    })\n\nif not json_ld_list:\n    article_ld = {\n        '@context': 'https://schema.org',\n        '@type': 'Article',\n        'headline': meta_title,\n        'datePublished': article.get('meta', {}).get('byline_date_iso', ''),\n        'dateModified': article.get('meta', {}).get('byline_date_iso', ''),\n        'author': {'@type': 'Person', 'name': (article.get('meta', {}).get('author', {}) or {}).get('name', '')},\n        'image': ['hero.jpg'],\n        'mainEntityOfPage': canonical or ''\n    }\n    breadcrumb_ld = {\n        '@context': 'https://schema.org',\n        '@type': 'BreadcrumbList',\n        'itemListElement': [\n            {\n                '@type': 'ListItem',\n                'position': 1,\n                'name': 'وبلاگ',\n                'item': (domain.rstrip('/') + base_path) if domain else base_path\n            },\n            {\n                '@type': 'ListItem',\n                'position': 2,\n                'name': title,\n                'item': canonical or ''\n            }\n        ]\n    }\n    json_ld_list = [article_ld, breadcrumb_ld]\njson_ld_str = json.dumps(json_ld_list, ensure_ascii=False, separators=(',', ':'))\n\ncanonical_html = f\"<link rel='canonical' href='{canonical}'/>\" if canonical else \"\"\n\nif final_gloss:\n    lis = []\n    for g in final_gloss:\n        alias = (\n            \" <em class='alias'>(معادل‌ها: \" + esc(', '.join(g.get('aliases', []))) + \")</em>\"\n            if g.get('aliases')\n            else ''\n        )\n        defs = esc(g.get('definition', '') or 'نامشخص')\n        ids = g.get('citation_ids') or []\n        srcs = (' ' + ' '.join(f\"[{i}]\" for i in ids)) if ids else ''\n        prov = \"\"\n        if g.get('source') in ('apa', 'nimh', 'who') and g.get('provenance_url'):\n            prov = (\n                \" <small class='src'>(منبع: \"\n                + esc(g.get('source').upper())\n                + \" — <a href='\"\n                + esc(g['provenance_url'])\n                + \"' target='_blank' rel='nofollow noopener'>لینک</a>)</small>\"\n            )\n        elif g.get('source') == 'llm':\n            prov = \" <small class='src'>(پیش‌نویس هوش مصنوعی؛ نیاز به بازبینی)</small>\"\n        elif g.get('source') == 'internal':\n            prov = \" <small class='src'>(تعریف داخلی)</small>\"\n        flag = \" <span title='نیاز به بازبینی'>⚠️</span>\" if not g.get('reviewed', True) else \"\"\n        lis.append(\n            f\"<li id='gloss-{g['id']}'><strong>{esc(g['term'])}</strong>{alias} — {defs}{srcs}{prov}{flag}</li>\"\n        )\n    gloss_html = (\n        '<section id=\"glossary\" class=\"glossary\">\\n<h3>واژه‌نامه</h3>\\n<ol>\\n'\n        + '\\n'.join(lis)\n        + '\\n</ol>\\n</section>'\n    )\nelse:\n    gloss_html = ''\n\nstyle_css = \"\"\"body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.75;max-width:880px;margin:2rem auto;padding:0 1rem;}\nnav.toc ol{list-style:none;padding-inline-start:0;margin:0}\nnav.toc ol ol{list-style:none;padding-inline-start:1rem;margin:0}\nnav.toc li{counter-reset:none}\nnav.toc a{text-decoration:none}\n\nh1{font-size:2rem;margin-bottom:1rem;}\nh2{font-size:1.25rem;margin-top:1.6rem;}\nh3{font-size:1.1rem;margin-top:1.0rem;}\nfigure{margin:1rem 0;}\nimg{max-width:100%;height:auto;border-radius:10px;}\nfigcaption{font-size:.9rem;color:#666;}\n.cta p{font-weight:600;}\nul{padding-inline-start:1.2rem;}\nnav.toc{background:#f8f9fb;padding:.8rem 1rem;border-radius:10px;}\n.disclaimer{background:#fff3cd;padding:.8rem 1rem;border-radius:10px;}\n.glossary-term{background:#fff6d6;border-radius:4px;padding:0 .15rem;}\n.glossary ol{padding-inline-start:1.2rem;}\n.taglist{display:flex;gap:.6rem;flex-wrap:wrap;list-style:none;padding-left:0;}\n.taglist a{background:#eef3ff;padding:.2rem .6rem;border-radius:999px;text-decoration:none;}\n.warnings{font-size:.85rem;color:#b45309;}\n.gloss-sup{font-size:.72em;line-height:1;margin-inline-start:.2em;vertical-align:super;}\np, li { text-align: justify; text-justify: inter-word; line-height: 1.9; }\"\"\"\n\n\ntoc_placeholder_items = []\nfor i, s in enumerate(sections):\n    anchor = f\"sec{i + 1}\"\n    heading = (s or {}).get('heading', '')\n    subs = (s or {}).get('subsections', []) or []\n    li = f\"<li><a href='#{anchor}'>{esc(heading)}</a>\"\n    if subs:\n        inner = []\n        for j, sub in enumerate(subs):\n            s_anchor = f\"sec{i + 1}-{j + 1}\"\n            inner.append(f\"<li><a href='#{s_anchor}'>{esc((sub or {}).get('heading', ''))}</a></li>\")\n        li += '<ol>' + ''.join(inner) + '</ol>'\n    li += '</li>'\n    toc_placeholder_items.append(li)\n\nhtml_doc = []\nhtml_doc.append(\n    f\"\"\"<!doctype html>\n<html lang='{esc(lang)}'>\n<head>\n<meta charset='utf-8'/>\n<meta http-equiv='X-UA-Compatible' content='IE=edge'/>\n<meta name='viewport' content='width=device-width, initial-scale=1'/>\n<title>{meta_title}</title>\n<meta name='description' content='{meta_desc}'/>\n<meta name='robots' content='{robots}'/>{canonical_html}\n<meta property='og:type' content='article'/>\n<meta property='og:title' content='{esc(og.get('og_title') or meta_title)}'/>\n<meta property='og:description' content='{esc(og.get('og_description') or meta_desc)}'/>\n<meta property='og:image' content='{esc(og.get('og_image', 'hero.jpg'))}'/>\n<meta name='twitter:card' content='{esc(tw.get('card', 'summary_large_image'))}'/>\n<meta name='twitter:title' content='{esc(tw.get('title') or meta_title)}'/>\n<meta name='twitter:description' content='{esc(tw.get('description') or meta_desc)}'/>\n<meta name='twitter:image' content='{esc(tw.get('image', 'hero.jpg'))}'/>\n<script type='application/ld+json'>{json_ld_str}</script>\n<style>{style_css}</style>\n</head>\n<body dir='{dir_attr}'>\n  <article>\n    <header>\n      <h1>{esc(title)}</h1>\n      <figure><img src='{HERO_FN}' alt='{esc(hero_alt)}' loading='eager' fetchpriority='high' decoding='async' aria-describedby='cap-hero' width='{hero_sz[0]}' height='{hero_sz[1]}'><figcaption id='cap-hero'>{annotate_chunk(esc(hero_alt))}</figcaption></figure>\n      <p>{op_text_html}</p>\n    </header>\n    <nav id='toc' class='toc' aria-label='فهرست مطالب'>\n      <strong>فهرست مطالب</strong>\n      <ol>{''.join(toc_placeholder_items)}</ol>\n    </nav>\n    <main>\n\"\"\"\n)\n\nhtml_doc.append('\\n'.join(body_parts))\n\nif conclusion:\n    html_doc.append(\n        f\"\"\"\n    </main>\n    <section><h3>جمع‌بندی</h3><p>{esc(conclusion)}</p></section>\"\"\"\n    )\nelse:\n    html_doc.append(\"\\n    </main>\")\n\nif cta:\n    cta_html = ''.join(f\"<p>• {esc(x)}</p>\" for x in cta)\n    html_doc.append(\n        f\"\"\"\n    <section aria-label='دعوت به تعامل'><h3>دعوت به تعامل</h3><div class='cta'>{cta_html}</div></section>\"\"\"\n    )\n\nif gloss_html:\n    html_doc.append(\"\\n    \" + gloss_html)\n\nif refs_html:\n    html_doc.append(f\"\\n    <section id='references' aria-label='منابع'><h3>منابع</h3>{refs_html}</section>\")\n\nif tags_html:\n    html_doc.append(\"\\n    \" + tags_html)\n\nhtml_doc.append(\n    \"\"\"\n    <section class=\"disclaimer\" aria-label='یادداشت مهم'><p>• این مطلب جایگزین تشخیص یا درمان حرفه‌ای نیست.</p><p>• برای تصمیم‌های پزشکی با متخصص مشورت کنید.</p></section>\n\n  </article>\n</body>\n</html>\"\"\"\n)\n\nhtml_text = ''.join(html_doc)\n\n_FA_DIGITS = str.maketrans(\"0123456789\", \"۰۱۲۳۴۵۶۷۸۹\")\n\n\ndef to_persian_digits(s: str) -> str:\n    return str(s).translate(_FA_DIGITS)\n\n\ndef make_anchor_id(text: str, prefix: str = \"sec-\") -> str:\n    t = html.unescape(text or \"\")\n    t = re.sub(r\"<[^>]+>\", \"\", t)\n    t = re.sub(r\"[\\s\\u200c\\u200f]+\", \" \", t).strip()\n    t = re.sub(r\"[^0-9A-Za-z_\\-\\u0600-\\u06FF]+\", \"-\", t)\n    t = re.sub(r\"-{2,}\", \"-\", t).strip(\"-\")\n    if not t:\n        t = \"sec\"\n    return f\"{prefix}{t}\"\n\n\ndef format_fa_number(indices, root_suffix: str = \"-\", segment_suffix: str = \"-\", convert_digits: bool = True) -> str:\n    def _sep(suf: str) -> str:\n        return \"\\u200F\" + suf + \"\\u200F\"\n\n    try:\n        iterator = list(indices)\n    except Exception:\n        iterator = [int(indices)]\n    parts = []\n    for k, idx in enumerate(iterator):\n        try:\n            n = int(idx)\n        except Exception:\n            continue\n        suf = root_suffix if k == 0 else segment_suffix\n        parts.append(f\"{n}{_sep(suf)}\")\n    s = \"\".join(parts)\n    return to_persian_digits(s) if convert_digits else s\n\n\ndef extract_headings_from_html(rendered_html: str, max_level: int = 3, min_level: int = 2):\n    if not rendered_html:\n        return []\n    pattern = r\"<h([1-6])\\b[^>]*>(.*?)</h\\1>\"\n    out = []\n    for m in re.finditer(pattern, rendered_html, flags=re.IGNORECASE | re.DOTALL):\n        lvl = int(m.group(1))\n        if lvl < min_level or lvl > max_level:\n            continue\n        text = re.sub(r\"<[^>]+>\", \"\", (m.group(2) or \"\")).strip()\n        if text:\n            out.append({\"level\": lvl, \"title\": text})\n    return out\n\n\ndef nest_headings(flat, max_level: int = 3):\n    root = []\n    stack = []\n    for h in flat:\n        lvl = max(1, min(int(h.get(\"level\", 1)), max_level))\n        node = {\n            \"id\": \"\",\n            \"level\": lvl,\n            \"title\": (h.get(\"title\") or \"\").strip(),\n            \"number\": \"\",\n            \"children\": []\n        }\n        while stack and stack[-1][\"level\"] >= lvl:\n            stack.pop()\n        if not stack:\n            root.append(node)\n        else:\n            stack[-1][\"children\"].append(node)\n        stack.append(node)\n    return root\n\n\ndef assign_numbers_and_ids(tree, cfg, path=None):\n    if path is None:\n        path = []\n    for i, node in enumerate(tree, start=1):\n        path_here = path + [i]\n        node[\"number\"] = format_fa_number(\n            path_here,\n            root_suffix=cfg.get(\"root_suffix\", \"-\"),\n            segment_suffix=cfg.get(\"segment_suffix\", \"-\"),\n            convert_digits=cfg.get(\"convert_digits\", True),\n        )\n        node[\"id\"] = make_anchor_id(\n            f\"{node['number']}{node['title']}\",\n            prefix=cfg.get(\"anchor_prefix\", \"sec-\")\n        )\n        if node[\"children\"]:\n            assign_numbers_and_ids(node[\"children\"], cfg, path_here)\n\n\ndef flatten_toc(toc):\n    out = []\n\n    def _walk(nodes):\n        for n in nodes:\n            out.append(n)\n            if n.get(\"children\"):\n                _walk(n[\"children\"])\n\n    _walk(toc or [])\n    return out\n\n\ndef generate_toc(rendered_html: str, meta: dict):\n    cfg = (meta or {}).get(\"toc_numbering\", {}) or {}\n    max_level = int(cfg.get(\"max_level\", 3))\n    cfg.setdefault(\"root_suffix\", \"-\")\n    cfg.setdefault(\"segment_suffix\", \"-\")\n    cfg.setdefault(\"convert_digits\", True)\n    cfg.setdefault(\"anchor_prefix\", \"sec-\")\n    flat = extract_headings_from_html(rendered_html, max_level=max_level, min_level=2)\n    tree = nest_headings(flat, max_level=max_level)\n    assign_numbers_and_ids(tree, cfg)\n    return tree\n\n\ndef apply_toc_ids_to_html(rendered_html: str, toc, max_level: int = 3, min_level: int = 2) -> str:\n    if not rendered_html or not toc:\n        return rendered_html or \"\"\n    pattern = r\"<h([1-6])\\b([^>]*)>(.*?)</h\\1>\"\n    toc_flat = [n for n in flatten_toc(toc) if min_level <= int(n.get(\"level\", 1)) <= max_level]\n    idx = 0\n\n    def _repl(m):\n        nonlocal idx\n        level = int(m.group(1))\n        attrs = m.group(2) or \"\"\n        inner = m.group(3) or \"\"\n        if level < min_level or level > max_level:\n            return m.group(0)\n        if re.search(r'\\bid\\s*=\\s*\"(.*?)\"', attrs) or re.search(r\"\\bid\\s*=\\s*'(.*?)'\", attrs):\n            return m.group(0)\n        if idx >= len(toc_flat) or int(toc_flat[idx].get(\"level\", 0)) != level:\n            return m.group(0)\n        id_val = toc_flat[idx].get(\"id\") or \"\"\n        idx += 1\n        id_attr = f' id=\"{id_val}\"' if id_val else \"\"\n        attrs_spaced = (\" \" + attrs.strip()) if attrs.strip() else \"\"\n        new_open = f\"<h{level}{id_attr}{attrs_spaced}>\"\n        return f\"{new_open}{inner}</h{level}>\"\n\n    return re.sub(pattern, _repl, rendered_html, flags=re.IGNORECASE | re.DOTALL)\n\n\ndef _toc_ol(nodes):\n    parts = []\n    for n in nodes:\n        href = f\"#{n.get('id', '')}\"\n        number = n.get('number', '')\n        title = esc(n.get('title', ''))\n        child_html = f\"<ol>{''.join(_toc_ol(n['children']))}</ol>\" if n.get('children') else \"\"\n        parts.append(\n            f\"<li><a href='{href}'><span class='secnum' dir='rtl'>{number}</span>{title}</a>{child_html}</li>\"\n        )\n    return parts\n\n\ntoc = generate_toc(html_text, article.get('meta', {}))\n\nnew_toc_html = (\n    \"<nav id='toc' class='toc' aria-label='فهرست مطالب'>\\n\"\n    \"  <strong>فهرست مطالب</strong>\\n\"\n    f\"  <ol>{''.join(_toc_ol(toc))}</ol>\\n\"\n    \"</nav>\"\n)\n\nhtml_text = re.sub(\n    r\"<nav id=['\\\"]toc['\\\"][\\s\\S]*?</nav>\",\n    new_toc_html,\n    html_text,\n    flags=re.IGNORECASE\n)\n\nmax_level = int(((article.get('meta', {}) or {}).get('toc_numbering', {}) or {}).get('max_level', 3))\nhtml_text = apply_toc_ids_to_html(html_text, toc, max_level=max_level, min_level=2)\n\nOUT_HTML.write_text(html_text, encoding='utf-8')\n\nREFS_JSON.write_text(json.dumps(cites, ensure_ascii=False, indent=2), encoding='utf-8')\nGLOSS_JSON.write_text(json.dumps(final_gloss, ensure_ascii=False, indent=2), encoding='utf-8')\n\nif OUT_HTML.exists():\n    with zipfile.ZipFile(ZIP_NAME, 'w', zipfile.ZIP_DEFLATED) as z:\n        for fn in [OUT_HTML.name, OUT_JSON.name, REFS_JSON.name, GLOSS_JSON.name, HERO_FN, INL1_FN, INL2_FN]:\n            p = ROOT / fn\n            if p.exists():\n                z.write(p, p.name)\n    print('ZIP_READY:', ZIP_NAME)\nelse:\n    print('ERROR: HTML_NOT_BUILT')\n\nif warnings:\n    print('WARNINGS:', '; '.join(warnings))\n",
+  "tagging_engine": {
+    "target_count": {
+      "min": 6,
+      "max": 10
+    },
+    "derive_from": [
+      "H2/H3 headings",
+      "ai_seo.key_points",
+      "entity_links",
+      "topic_keyword"
+    ],
+    "normalization": [
+      "حذف تکراری/هم‌معنا",
+      "اسلاگ‌سازی یکتا",
+      "حفظ تنوع معنایی (موضوع/کاربرد/مخاطب/نوع محتوا)"
+    ],
+    "tie_break": [
+      "اولویت با عبارات جست‌وجوشونده و بی‌ابهام",
+      "کوتاه و قابل‌کلیک"
+    ]
+  },
+  "assistant_run_contract": {
+    "do_not_summarize": true,
+    "final_answer_must_be": "Exactly one downloadable link to the built ZIP file (no analysis, no checklist).",
+    "steps": [
+      "1) Use `inputs.topic_keyword` only as a seed. Web-browse and pick a fresh trend angle (record it in meta.detected_trend_angle).",
+      "2) Produce a full `article.json` strictly matching `output_schema` and all rules in `research/source_priority_policy`, `structure_rules`, `toc_rules`, `quality_checks`.",
+      "3) Save the JSON to a local file named `article.json`.",
+      "4) Execute the Python code that is stored as a string in `python_builder` to render `article.html` and pack `article_package.zip` (even with warnings).",
+      "5) Return only a download link to `article_package.zip`. Nothing else."
+    ],
+    "hard_stops": [
+      "Never replace file-building with a textual checklist.",
+      "Never omit saving `article.json` to disk before running the builder.",
+      "Never return raw code as final answer—only the ZIP link."
+    ]
+  },
+  "execution_profile": {
+    "requires_code_interpreter": true,
+    "if_code_interpreter_unavailable": "Paste the `fail_safe_python_cell` below into a Python cell, fill ARTICLE_JSON, and run it."
+  },
+  "fail_safe_python_cell": "# Fail-safe runner (use only if the tool cannot auto-execute the embedded python_builder).\n# 1) Assistant: generate the full article JSON (as a Python triple-quoted string) and assign it to ARTICLE_JSON.\nARTICLE_JSON = r\"\"\"<FILL_WITH_FULL_article.json_JSON_TEXT>\"\"\"\n\n# 2) Write article.json to disk\nfrom pathlib import Path\nPath(\"article.json\").write_text(ARTICLE_JSON, encoding=\"utf-8\")\n\n# 3) Execute the builder code already provided inside the JSON under key `python_builder`.\nimport json, textwrap, runpy\ndata = json.loads(Path(\"article_framework.json\").read_text(encoding=\"utf-8\")) if Path(\"article_framework.json\").exists() else None\nif data is None:\n    # If this file (the framework JSON) isn't on disk, try to reconstruct from the current message context.\n    # Assistant: if needed, also write the framework JSON to `article_framework.json`.\n    pass\nbuilder_code = data[\"python_builder\"] if data else None\nif not builder_code:\n    raise RuntimeError(\"python_builder not found. Ensure the framework JSON is available as article_framework.json.\")\n# Write builder to a temp file and run it\nPath(\"builder.py\").write_text(builder_code, encoding=\"utf-8\")\nprint(\">> Running builder.py ...\")\nrunpy.run_path(\"builder.py\", run_name=\"__main__\")\nprint(\"Done. Expect `article.html` and `article_package.zip`.\")",
+  "build": {
+    "policy": {
+      "allow_zip_with_warnings": true,
+      "blocking_errors": [
+        "no_sections_or_too_few",
+        "no_paragraphs_in_sections",
+        "insufficient_references"
+      ]
+    },
+    "toc_min_items": 6,
+    "compose_opening_paragraph_from_parts": true
+  },
+  "validators": [
+    {
+      "key": "image_alt_required",
+      "description": "All images (hero + inline) must have non-empty alt.",
+      "severity": "warning",
+      "target": [
+        "hero_image",
+        "inline_images"
+      ]
+    },
+    {
+      "key": "toc_min_items",
+      "description": "Table of contents must have at least 6 items.",
+      "params": {
+        "min": 6
+      },
+      "severity": "warning"
+    }
+  ],
+  "execution_contract": {
+    "version": "1.0",
+    "mode": "generate_only",
+    "objective": "Produce article.html and article_package.zip from THIS schema without modifying it.",
+    "forbidden_actions": [
+      "Modify this JSON schema or its keys/values",
+      "Return a repair of this JSON",
+      "Output change logs instead of article content",
+      "Stop packaging because of non-blocking warnings"
+    ],
+    "allowed_actions": [
+      "Synthesize missing non-critical fields to satisfy constraints",
+      "Infer TOC from section titles",
+      "Autofill image alt from captions if empty"
+    ],
+    "hard_constraints": {
+      "toc_min_items": 6,
+      "min_sections": 5,
+      "min_paragraphs_per_section": 2,
+      "min_references": 5,
+      "allow_zip_with_warnings": true
+    },
+    "outputs": {
+      "html_filename": "article.html",
+      "zip_filename": "article_package.zip",
+      "additional_files": [
+        "references.json",
+        "glossary.json",
+        "og_image.png"
+      ]
+    },
+    "on_violation": "ERROR:GENERATION_CONTRACT_VIOLATION"
+  },
+  "export": {
+    "html_template": {
+      "head": "<!doctype html><html lang='fa'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{{title}}</title><meta name='description' content='{{meta_description}}'><meta property='og:title' content='{{title}}'><meta property='og:description' content='{{meta_description}}'></head><body dir='rtl' style='font-family:Tahoma, sans-serif;line-height:1.9;text-align:justify;'>",
+      "header": "<h1>{{title}}</h1><figure><img src='{{hero.src}}' alt='{{hero.alt}}' style='max-width:100%;height:auto;'/><figcaption>{{hero.caption}}</figcaption></figure><p>{{opening_paragraph}}</p>",
+      "toc": "<nav><h2>فهرست</h2><ol>{{toc_items}}</ol></nav>",
+      "section": "<section><h2>{{section.title}}</h2>{{subsections}}{{paragraphs}}</section>",
+      "footer": "<hr/><section id='references'><h2>منابع</h2><ol>{{references}}</ol></section><section id='glossary'><h2>واژه‌نامه</h2><dl>{{glossary}}</dl></section></body></html>"
+    },
+    "placeholders": {
+      "toc_items": "<li><a href='#{{id}}'>{{text}}</a></li>",
+      "reference_item": "<li>[{{n}}] <a href='{{url}}' rel='noopener noreferrer' target='_blank'>{{title}}</a> ({{year}})</li>",
+      "glossary_item": "<dt>{{term}}</dt><dd>{{definition}}</dd>",
+      "paragraph": "<p>{{text}}</p>",
+      "subsection": "<h3>{{title}}</h3>"
+    }
+  },
+  "packager": {
+    "manifest": [
+      {
+        "path": "article.html",
+        "source": "rendered_html"
+      },
+      {
+        "path": "references.json",
+        "source": "references_json"
+      },
+      {
+        "path": "glossary.json",
+        "source": "glossary_json"
+      },
+      {
+        "path": "assets/og_image.png",
+        "source": "generated_og_image"
+      }
+    ],
+    "always_zip_when_html_exists": true
+  },
+  "_meta": {
+    "last_fix": "v5.7-generate-export",
+    "last_fix_time_utc": "2025-09-21T00:00:00Z",
+    "changes_note": [
+      "شماره‌گذاری واژه‌نامه بر مبنای اولین وقوع در متن و رندر واژه‌نامه به‌ترتیب ID صعودی",
+      "اصلاح join داخلی TOC",
+      "ایجاد اجباری references.json و glossary.json + زیپ در Presence هشدار",
+      "افزودن aria-label/title به لینک‌های ارجاع واژه‌نامه",
+      "حفظ تمام کلیدها و ساختارهای قبلی؛ فقط افزوده/اصلاح ایمن"
+    ]
+  }
+}
